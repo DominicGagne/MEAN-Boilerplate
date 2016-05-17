@@ -43,3 +43,19 @@
         </div>
     </body>
 </html>
+
+
+<!--Example template if you use the angular 2 compatible code. -->
+<!--HomeCtrl becomes an object that has functions and attributes appended to it in the controller.
+From here they can be referenced in the html by the defined object 'home'. Basically we say 'On this template call the homeCtrl home,
+and then we can reference its attrs and funcs by home.attr and home.func -->
+<!--This ends up making the code more clear and will allow for nested controllers if you need to.-->
+<!--<div ng-controller="HomeCtrl as home">
+    <div ng-repeat="user in home.users">
+        <p>
+            UserID: <b>{{home.user.UserID}}</b><br>
+            Name: <b>{{home.user.Name}}</b><br><br>
+        </p>
+    </div>
+    <md-button ng-click="home.someFunc()"></md-button>
+</div>-->
