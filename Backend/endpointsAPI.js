@@ -15,6 +15,9 @@ var endpointsAPI  = function(app, rootDir, database) {
         //courtesy of Breaking Bad, which I've never actually watched lol.
         //let me know if you have any questions about Endpoints in node, I am fairly
         //comfortable with them now.
+        
+        //FIXME: Avoid passing arguments VIA the URL. This is poor practice.
+        //Angular defaults to sending JSONP objs so try to find a method to get the request body from that.
         app.get('/sayMyName/:name', function(req, res){
             //app.set(req.params.name);
             res.send(req.params.name);
