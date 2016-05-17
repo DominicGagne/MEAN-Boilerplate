@@ -64,6 +64,8 @@ var Inukbook = angular.module('Inukbook.controllers',[])
 
 });
 
+//What is this being used for?
+//If this directive is needed, it should be in its own file.
 Inukbook.directive('dynamic', function ($compile) {
   return {
     restrict: 'A',
