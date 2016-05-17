@@ -1,5 +1,5 @@
-<html>
-<ng-app="Inukbook">
+<html> <!--The html, head, and body tags are not necessary since you are using Angular. Wrapping everything in just a div is enough-->
+<ng-app="Inukbook"><!--Why is ng-app written here? You already have it defined in the index.html page and it should only be in one spot.-->
     <head>
         <title>Inukbook</title>
     </head>
@@ -16,7 +16,7 @@
                 </p>
             </div>
             <div flex="25" flex-offset="3">
-                <br><br><br><br>
+                <br><br><br><br><!--It would be better to use CSS to do this instead of just BRs.-->
                 <h4>Pulled from database (via http GET):</h4>
                 <div ng-repeat="user in users">
                     <p>UserID: <b>{{user.UserID}}</b><br>
