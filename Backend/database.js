@@ -1,6 +1,9 @@
 var databaseModule = function(mysql) {
     var self = this;
 
+    //FIXME: FATAL: This should be in a crypto file and then loaded from there.
+    //Take a look at how F2F loads their crypto file.
+    //Ask Justin if you need help.
     var connection = mysql.createConnection({
         //  port: 8080,
         host: '127.0.0.1',
@@ -9,6 +12,7 @@ var databaseModule = function(mysql) {
         password: '',
     });  
 
+    //Is this function complete?
     self.acquireConnection = function() {
         //should this be inside of a callback? 
         connection.connect(function(err) {
@@ -22,6 +26,7 @@ var databaseModule = function(mysql) {
     };
 
     self.fetchAll = function(queryString, callback) {
+        //FIXME: FATAL: I could likely SQL inject this function since you are just running the query on whatever string I pass to you.
         connection.query(queryString, function(err, rows, fields) {
             if (err) throw err;
             callback(rows);
