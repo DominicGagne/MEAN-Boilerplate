@@ -1,3 +1,7 @@
+//This would actually be better as a service instead of a factory.
+//I realize that this code was copy pasted from my own work but I have since then updated things.
+//A service is better because it is a singleton and there will only ever be a need for 1 request service.
+//It is also really easy to implement the rest of the RESTful HTTP calls.
 /**
 * This module is an angular factory.
 * These are similar to classes, in the sense that
