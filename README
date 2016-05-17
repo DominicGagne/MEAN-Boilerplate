@@ -2,6 +2,9 @@ Dominic Gagne and Oliver Cook
 
 Inukbook
 
+IMPORTANT:
+This should include steps on how to setup and run the project for when another developer wants to join the project.
+
 You should try to remove JQuery from the application unless you absolutely need it and cannot find an AngularJS way to do it.
 If you must use JQuery make sure to JQueryLite or Mobile I dont remember the name.
 
