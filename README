@@ -13,3 +13,6 @@ Pick one or the other.
 
 It appears you are using CDNs for the angular libraries yet there are also angular libraries that have been downloaded and are added in the JS folder.
 Why are these here if you are using CDNs to load your Angular?
+
+MYSQL-santatizer module:
+https://github.com/felixge/node-mysql#escaping-query-values
