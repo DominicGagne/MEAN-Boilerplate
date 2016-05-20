@@ -2,3 +2,17 @@ Dominic Gagne and Oliver Cook
 
 Inukbook
 
+IMPORTANT:
+This should include steps on how to setup and run the project for when another developer wants to join the project.
+
+You should try to remove JQuery from the application unless you absolutely need it and cannot find an AngularJS way to do it.
+If you must use JQuery make sure to JQueryLite or Mobile I dont remember the name.
+
+Also, why do you have BootstrapJS files if you are using Angular Material? It will cause errors with your Angular Material files.
+Pick one or the other.
+
+It appears you are using CDNs for the angular libraries yet there are also angular libraries that have been downloaded and are added in the JS folder.
+Why are these here if you are using CDNs to load your Angular?
+
+MYSQL-santatizer module:
+https://github.com/felixge/node-mysql#escaping-query-values

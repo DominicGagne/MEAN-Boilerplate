@@ -1,5 +1,5 @@
-<html>
-<ng-app="Inukbook">
+<html> <!--The html, head, and body tags are not necessary since you are using Angular. Wrapping everything in just a div is enough-->
+<ng-app="Inukbook"><!--Why is ng-app written here? You already have it defined in the index.html page and it should only be in one spot.-->
     <head>
         <title>Inukbook</title>
     </head>
@@ -16,7 +16,7 @@
                 </p>
             </div>
             <div flex="25" flex-offset="3">
-                <br><br><br><br>
+                <br><br><br><br><!--It would be better to use CSS to do this instead of just BRs.-->
                 <h4>Pulled from database (via http GET):</h4>
                 <div ng-repeat="user in users">
                     <p>UserID: <b>{{user.UserID}}</b><br>
@@ -43,3 +43,19 @@
         </div>
     </body>
 </html>
+
+
+<!--Example template if you use the angular 2 compatible code. -->
+<!--HomeCtrl becomes an object that has functions and attributes appended to it in the controller.
+From here they can be referenced in the html by the defined object 'home'. Basically we say 'On this template call the homeCtrl home,
+and then we can reference its attrs and funcs by home.attr and home.func -->
+<!--This ends up making the code more clear and will allow for nested controllers if you need to.-->
+<!--<div ng-controller="HomeCtrl as home">
+    <div ng-repeat="user in home.users">
+        <p>
+            UserID: <b>{{home.user.UserID}}</b><br>
+            Name: <b>{{home.user.Name}}</b><br><br>
+        </p>
+    </div>
+    <md-button ng-click="home.someFunc()"></md-button>
+</div>-->
