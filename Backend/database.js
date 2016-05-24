@@ -1,22 +1,21 @@
+//database module. contains the code necessary to access a locally hosted database.
+//only two sample call have been written, 'acquireConnection' to establish a 
+//connection with the database, and 'fetchAll', to select all rows from a particular query
 var databaseModule = function(mysql) {
     var self = this;
 
-    //FIXME: FATAL: This should be in a crypto file and then loaded from there.
-    //Take a look at how F2F loads their crypto file.
-    //Ask Justin if you need help.
+    //replace these credentials with your own.
     var connection = mysql.createConnection({
-        //  port: 8080,
         host: '127.0.0.1',
         database: 'Inukbook',
         user: 'root',
         password: '',
     });  
 
-    //Is this function complete?
+    //self explanatory, this function connects to a database using
+    //the credentials specified above. 
     self.acquireConnection = function() {
-        //should this be inside of a callback? 
         connection.connect(function(err) {
-            // connected;! (unless `err` is set)
             if(err) {
                 console.log("Could not connect to db!");
             } else {
@@ -25,8 +24,9 @@ var databaseModule = function(mysql) {
         });    
     };
 
+    //fetch all rows on a particular query.  Note that if you should sanitize your SQL statements if
+    //the user will at any point be able to modify the query string.
     self.fetchAll = function(queryString, callback) {
-        //FIXME: FATAL: I could likely SQL inject this function since you are just running the query on whatever string I pass to you.
         connection.query(queryString, function(err, rows, fields) {
             if (err) throw err;
             callback(rows);

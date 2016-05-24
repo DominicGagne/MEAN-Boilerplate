@@ -1,6 +1,10 @@
+//endpoints module.  This file is the top level of the API.  All calls to the backend
+//pass through this module.
+//this example only makes use of GET requests, though any type of request can be made.
 var endpointsAPI  = function(app, rootDir, database) {
     var self = this;
 
+    //calling this function will activate the API, and enable users to connect to the app.
     self.activateEndpoints = function() {
 
         //our default endpoint.  When the user loads up the page, send in index.html, which
@@ -16,19 +20,24 @@ var endpointsAPI  = function(app, rootDir, database) {
         //let me know if you have any questions about Endpoints in node, I am fairly
         //comfortable with them now.
         
-        //FIXME: Avoid passing arguments VIA the URL. This is poor practice.
-        //Angular defaults to sending JSONP objs so try to find a method to get the request body from that.
         app.get('/sayMyName/:name', function(req, res){
             //app.set(req.params.name);
             res.send(req.params.name);
         });   
 
 
-        app.get('/getUsers', function(req, res){
-            database.fetchAll("SELECT * FROM User", function(data) {
+        app.get('/getAllUsers', function(req, res){
+            database.fetchAll("SELECT UserID, Name FROM User", function(data) {
                 res.send(JSON.stringify(data));
             });
         });   
+
+
+        app.get('/getLogsByUser', function(req, res){
+            database.fetchAll("SELECT * FROM User", function(data) {
+                res.send(JSON.stringify(data));
+            });
+        }); 
 
 
 

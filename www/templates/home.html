@@ -1,61 +1,27 @@
-<html> <!--The html, head, and body tags are not necessary since you are using Angular. Wrapping everything in just a div is enough-->
-<ng-app="Inukbook"><!--Why is ng-app written here? You already have it defined in the index.html page and it should only be in one spot.-->
+<html> 
+<ng-app="Inukbook">
     <head>
         <title>Inukbook</title>
     </head>
     <body>
         <div layout="row">
             <div flex="30" flex-offset="10">
-                <h2>Inukbook</h2>
-                <p>This is the project skeleton for <b>Inukbook</b>.<br><br>
+                <h2>Blank App.</h2>
+                <p>This is the project skeleton for <b>your app name here</b>.<br><br>
                 I've got it set up with a <b>MEAN</b> stack.<br><br>
                 <b>M</b>ySQL<br>
                 <b>E</b>xpressJS<br>
                 <b>A</b>ngularJS<br>
-                <b>N</b>odeJS (which is fucking amazing)
+                <b>N</b>odeJS (which is amazing)
                 </p>
-            </div>
-            <div flex="25" flex-offset="3">
-                <br><br><br><br><!--It would be better to use CSS to do this instead of just BRs.-->
-                <h4>Pulled from database (via http GET):</h4>
-                <div ng-repeat="user in users">
-                    <p>UserID: <b>{{user.UserID}}</b><br>
-                    Name: <b>{{user.Name}}</b><br><br></p>
-                </div>
-            </div>
-            <div flex="25" flex-offset="5">
-                <br><br><br><br>
-                <h4>Pulled from database (via socket):</h4>
-                <div ng-repeat="user in socketUsers">
-                    <p>UserID: <b>{{user.UserID}}</b><br>
-                    Name: <b>{{user.Name}}</b><br><br></p>
-                </div>
             </div>
         </div>
         <br><br><br><br>
         <div layout="row">
             <div flex="30" flex-offset="10">
-                <h3>Dominic Gagne and Oliver Cook</h3>
-            </div>
-            <div flex="45" flex-offset="3">
-                <p>This page is just meant to show that we have our stack set up and all components are communicating with each other.  The database has been created and the information display has been pulled from it.  I've used both http and sockets to pull the information, just as a proof of concept.  The sockets will be used for uploading multimedia to the server.</p>
+                <h3>Dominic Gagne</h3>
             </div>
         </div>
     </body>
 </html>
 
-
-<!--Example template if you use the angular 2 compatible code. -->
-<!--HomeCtrl becomes an object that has functions and attributes appended to it in the controller.
-From here they can be referenced in the html by the defined object 'home'. Basically we say 'On this template call the homeCtrl home,
-and then we can reference its attrs and funcs by home.attr and home.func -->
-<!--This ends up making the code more clear and will allow for nested controllers if you need to.-->
-<!--<div ng-controller="HomeCtrl as home">
-    <div ng-repeat="user in home.users">
-        <p>
-            UserID: <b>{{home.user.UserID}}</b><br>
-            Name: <b>{{home.user.Name}}</b><br><br>
-        </p>
-    </div>
-    <md-button ng-click="home.someFunc()"></md-button>
-</div>-->
